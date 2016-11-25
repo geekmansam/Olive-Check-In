@@ -47,6 +47,8 @@ app.on('ready', async () => {
     height: 728
   });
 
+  mainWindow.setFullScreen(true);
+
   mainWindow.loadURL(`file://${__dirname}/app.html`);
 
   mainWindow.webContents.on('did-finish-load', () => {
