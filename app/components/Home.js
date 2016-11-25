@@ -10,7 +10,9 @@ export default class Home extends Component {
       <div>
         <div className={styles.container}>
           <h2>Olive Baptist Church</h2>
-          {/* <Link to="/counter">to Counter</Link> */}
+          <Link to="/settings" className={styles.settings_link} title="Settings">
+            <i className="fa fa-cogs" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     );
