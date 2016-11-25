@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import styles from './Home.css';
+import Button from './Button';
 
 
 export default class Home extends Component {
@@ -13,6 +14,7 @@ export default class Home extends Component {
           <Link to="/settings" className={styles.settings_link} title="Settings">
             <i className="fa fa-cogs" aria-hidden="true" />
           </Link>
+          <Button text="Print" onClick={() => { }} />
         </div>
       </div>
     );
