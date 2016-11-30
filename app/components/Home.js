@@ -1,21 +1,39 @@
 // @flow
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-import styles from './Home.css';
-import Button from './Button';
+import { Grid, Row, Col, FormGroup,
+FormControl, HelpBlock, ControlLabel } from 'react-bootstrap';
+import DialPad from './DialPad';
 
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-        <div className={styles.container}>
-          <h2>Olive Baptist Church</h2>
-          <Link to="/settings" className={styles.settings_link} title="Settings">
-            <i className="fa fa-cogs" aria-hidden="true" />
-          </Link>
-          <Button text="Print" onClick={() => { }} />
-        </div>
+        <Grid>
+          <Row className="show-grid">
+            <Col xs={12} md={6}>
+              <form>
+                <FormGroup
+                  controlId="formBasicText"
+                  validationState={() => {}}
+                >
+                  <ControlLabel>Type your phone number</ControlLabel>
+                  <FormControl
+                    type="text"
+                    value=""
+                    placeholder=""
+                    onChange={() => {}}
+                  />
+                  <FormControl.Feedback />
+                  <HelpBlock>Then press next</HelpBlock>
+                </FormGroup>
+              </form>
+            </Col>
+            <Col xs={12} md={6}>
+              <DialPad />
+            </Col>
+          </Row>
+        </Grid>
       </div>
     );
   }
