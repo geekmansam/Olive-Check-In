@@ -11,7 +11,7 @@ export default class Home extends Component {
       <div>
         <Grid>
           <Row className="show-grid">
-            <Col xs={12} md={6}>
+            <Col xs={12} md={8}>
               <form>
                 <FormGroup
                   controlId="formBasicText"
@@ -29,7 +29,7 @@ export default class Home extends Component {
                 </FormGroup>
               </form>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={4}>
               <DialPad />
             </Col>
           </Row>

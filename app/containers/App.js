@@ -11,11 +11,11 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h2>Olive Baptist Church</h2>
-        <Link to="/settings" className={styles.settings_link} title="Settings">
+        <h1>Olive Baptist Church</h1>
+        <Link to="/settings" className={`${styles.settings_link}`} title="Settings">
           <i className="fa fa-cogs" aria-hidden="true" />
         </Link>
-        <div className="main-window">
+        <div className={`main-window ${styles.vertical_center}`}>
           {this.props.children}
         </div>
       </div>
