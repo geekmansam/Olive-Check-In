@@ -30,7 +30,7 @@ export default class Home extends Component {
               </form>
             </Col>
             <Col xs={12} md={4}>
-              <DialPad />
+              <DialPad onClick={() => {}} />
             </Col>
           </Row>
         </Grid>
