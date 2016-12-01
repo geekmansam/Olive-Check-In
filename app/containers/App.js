@@ -13,7 +13,7 @@ export default class App extends Component {
       <div>
         <h1>Olive Baptist Church</h1>
         <Link to="/settings" className={`${styles.settings_link}`} title="Settings">
-          <i className="fa fa-cogs" aria-hidden="true" />
+          <i className="fa fa-cogs fa-2x" aria-hidden="true" />
         </Link>
         <div className={`main-window ${styles.vertical_center}`}>
           {this.props.children}
