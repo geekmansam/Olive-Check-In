@@ -11,6 +11,10 @@ This app is built with Electron based on [electron-react-boilerplate](https://gi
 ```bash
 $ npm install
 ```
+### Troubleshouting
+
+There may be a error about node-gyp. Check installation [page](https://github.com/nodejs/node-gyp#installation).  
+
 
 ## Run
 
