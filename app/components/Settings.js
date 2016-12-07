@@ -3,6 +3,16 @@ import { Grid, Row, Col, FormGroup,
 FormControl, ControlLabel, ButtonToolbar, Button } from 'react-bootstrap';
 
 class Settings extends Component {
+
+  state = {
+    baseApiUrl: '',
+    clientUsername: '',
+    clientPassword: '',
+    username: '',
+    password: '',
+    settingsScreenPassword: '',
+  }
+
   render() {
     return (
       <div>
@@ -20,41 +30,36 @@ class Settings extends Component {
                     <ControlLabel>Base API URL</ControlLabel>
                     <FormControl
                       type="text"
-                      value=""
-                      placeholder=""
-                      onChange={() => {}}
+                      placeholder="http://..."
+                      onChange={(e) => { this.state.baseApiUrl = e.target.value; }}
                     />
                     <FormControl.Feedback />
                     <ControlLabel>Client Username</ControlLabel>
                     <FormControl
                       type="text"
-                      value=""
                       placeholder=""
-                      onChange={() => {}}
+                      onChange={(e) => { this.state.clientUsername = e.target.value; }}
                     />
                     <FormControl.Feedback />
                     <ControlLabel>Client Password</ControlLabel>
                     <FormControl
                       type="password"
-                      value=""
                       placeholder=""
-                      onChange={() => {}}
+                      onChange={(e) => { this.state.clientPassword = e.target.value; }}
                     />
                     <FormControl.Feedback />
                     <ControlLabel>Username</ControlLabel>
                     <FormControl
                       type="text"
-                      value=""
                       placeholder=""
-                      onChange={() => {}}
+                      onChange={(e) => { this.state.username = e.target.value; }}
                     />
                     <FormControl.Feedback />
                     <ControlLabel>Password</ControlLabel>
                     <FormControl
                       type="password"
-                      value=""
                       placeholder=""
-                      onChange={() => {}}
+                      onChange={(e) => { this.state.password = e.target.value; }}
                     />
                     <FormControl.Feedback />
                   </FormGroup>
@@ -62,9 +67,8 @@ class Settings extends Component {
                     <h2>Settings Screen Password</h2>
                     <FormControl
                       type="password"
-                      value=""
                       placeholder=""
-                      onChange={() => {}}
+                      onChange={(e) => { this.state.settingsScreenPassword = e.target.value; }}
                     />
                   </FormGroup>
                   <FormGroup>
@@ -82,7 +86,7 @@ class Settings extends Component {
                     </FormControl>
                   </FormGroup>
                   <ButtonToolbar>
-                    <Button bsStyle="success" onClick={() => { this.props.updateSettings(this.props.settings); }}>Save</Button>
+                    <Button bsStyle="success" onClick={() => { this.props.updateSettings(this.state); }}>Save</Button>
                   </ButtonToolbar>
                 </form>
                 <h1>Starting Mode</h1>
@@ -100,9 +104,6 @@ class Settings extends Component {
 }
 
 Settings.propTypes = {
-  settings: React.PropTypes.shape({
-    baseApiUrl: React.PropTypes.string,
-  }),
   updateSettings: React.PropTypes.func,
 };
 
