@@ -3,16 +3,16 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Settings from '../components/Settings';
-import * as CounterActions from '../actions/counter';
+import { Creators } from '../actions/settings';
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    settings: state.settings
   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(CounterActions, dispatch);
+  return bindActionCreators(Creators, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Settings);

@@ -81,6 +81,9 @@ class Settings extends Component {
                       <option value="other">...</option>
                     </FormControl>
                   </FormGroup>
+                  <ButtonToolbar>
+                    <Button bsStyle="success" onClick={() => { this.props.updateSettings(this.props.settings); }}>Save</Button>
+                  </ButtonToolbar>
                 </form>
                 <h1>Starting Mode</h1>
                 <ButtonToolbar>
@@ -95,5 +98,12 @@ class Settings extends Component {
     );
   }
 }
+
+Settings.propTypes = {
+  settings: React.PropTypes.shape({
+    baseApiUrl: React.PropTypes.string,
+  }),
+  updateSettings: React.PropTypes.func,
+};
 
 export default Settings;
