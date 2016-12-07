@@ -3,6 +3,8 @@ import thunk from 'redux-thunk';
 import { hashHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
 import createLogger from 'redux-logger';
+import { persistStore, autoRehydrate } from 'redux-persist';
+import { asyncSessionStorage } from 'redux-persist/storages';
 import rootReducer from '../reducers';
 
 import * as counterActions from '../actions/counter';
@@ -29,7 +31,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
   compose;
 /* eslint-enable no-underscore-dangle */
 const enhancer = composeEnhancers(
-  applyMiddleware(thunk, router, logger)
+  applyMiddleware(thunk, router, logger),
+  autoRehydrate()
 );
 
 export default function configureStore(initialState: Object) {
@@ -40,6 +43,8 @@ export default function configureStore(initialState: Object) {
       store.replaceReducer(require('../reducers')) // eslint-disable-line global-require
     );
   }
+
+  persistStore(store, { storage: asyncSessionStorage });
 
   return store;
 }
