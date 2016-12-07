@@ -4,7 +4,7 @@ import { hashHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
 import createLogger from 'redux-logger';
 import { persistStore, autoRehydrate } from 'redux-persist';
-import { asyncSessionStorage } from 'redux-persist/storages';
+import { asyncLocalStorage } from 'redux-persist/storages';
 import rootReducer from '../reducers';
 
 import * as counterActions from '../actions/counter';
@@ -44,7 +44,7 @@ export default function configureStore(initialState: Object) {
     );
   }
 
-  persistStore(store, { storage: asyncSessionStorage });
+  persistStore(store, { storage: asyncLocalStorage });
 
   return store;
 }

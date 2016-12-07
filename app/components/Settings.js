@@ -4,15 +4,6 @@ FormControl, ControlLabel, ButtonToolbar, Button } from 'react-bootstrap';
 
 class Settings extends Component {
 
-  state = {
-    baseApiUrl: '',
-    clientUsername: '',
-    clientPassword: '',
-    username: '',
-    password: '',
-    settingsScreenPassword: '',
-  }
-
   render() {
     return (
       <div>
@@ -30,36 +21,41 @@ class Settings extends Component {
                     <ControlLabel>Base API URL</ControlLabel>
                     <FormControl
                       type="text"
+                      value={this.props.settings.baseApiUrl}
                       placeholder="http://..."
-                      onChange={(e) => { this.state.baseApiUrl = e.target.value; }}
+                      onChange={(e) => { this.props.updateSettings({ baseApiUrl: e.target.value }); }}
                     />
                     <FormControl.Feedback />
                     <ControlLabel>Client Username</ControlLabel>
                     <FormControl
                       type="text"
+                      value={this.props.settings.clientUsername}
                       placeholder=""
-                      onChange={(e) => { this.state.clientUsername = e.target.value; }}
+                      onChange={(e) => { this.props.updateSettings({ clientUsername: e.target.value }); }}
                     />
                     <FormControl.Feedback />
                     <ControlLabel>Client Password</ControlLabel>
                     <FormControl
                       type="password"
+                      value={this.props.settings.clientPassword}
                       placeholder=""
-                      onChange={(e) => { this.state.clientPassword = e.target.value; }}
+                      onChange={(e) => { this.props.updateSettings({ clientPassword: e.target.value }); }}
                     />
                     <FormControl.Feedback />
                     <ControlLabel>Username</ControlLabel>
                     <FormControl
                       type="text"
+                      value={this.props.settings.username}
                       placeholder=""
-                      onChange={(e) => { this.state.username = e.target.value; }}
+                      onChange={(e) => { this.props.updateSettings({ username: e.target.value }); }}
                     />
                     <FormControl.Feedback />
                     <ControlLabel>Password</ControlLabel>
                     <FormControl
                       type="password"
+                      value={this.props.settings.password}
                       placeholder=""
-                      onChange={(e) => { this.state.password = e.target.value; }}
+                      onChange={(e) => { this.props.updateSettings({ password: e.target.value }); }}
                     />
                     <FormControl.Feedback />
                   </FormGroup>
@@ -67,8 +63,9 @@ class Settings extends Component {
                     <h2>Settings Screen Password</h2>
                     <FormControl
                       type="password"
+                      value={this.props.settings.settingsScreenPassword}
                       placeholder=""
-                      onChange={(e) => { this.state.settingsScreenPassword = e.target.value; }}
+                      onChange={(e) => { this.props.updateSettings({ settingsScreenPassword: e.target.value }); }}
                     />
                   </FormGroup>
                   <FormGroup>
@@ -85,9 +82,6 @@ class Settings extends Component {
                       <option value="other">...</option>
                     </FormControl>
                   </FormGroup>
-                  <ButtonToolbar>
-                    <Button bsStyle="success" onClick={() => { this.props.updateSettings(this.state); }}>Save</Button>
-                  </ButtonToolbar>
                 </form>
                 <h1>Starting Mode</h1>
                 <ButtonToolbar>
@@ -105,6 +99,14 @@ class Settings extends Component {
 
 Settings.propTypes = {
   updateSettings: React.PropTypes.func,
+  settings: React.PropTypes.shape({
+    baseApiUrl: React.PropTypes.string,
+    clientUsername: React.PropTypes.string,
+    clientPassword: React.PropTypes.string,
+    username: React.PropTypes.string,
+    password: React.PropTypes.string,
+    settingsScreenPassword: React.PropTypes.string,
+  }),
 };
 
 export default Settings;
