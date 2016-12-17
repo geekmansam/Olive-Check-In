@@ -1,12 +1,12 @@
 // @flow
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';
-import { persistStore, autoRehydrate } from 'redux-persist';
+import { autoRehydrate } from 'redux-persist';
 import rootReducer from '../reducers';
 
-const router = routerMiddleware(hashHistory);
+const router = routerMiddleware(browserHistory);
 
 const enhancer = applyMiddleware(thunk, router, autoRehydrate);
 
