@@ -12,6 +12,5 @@ const enhancer = applyMiddleware(thunk, router, autoRehydrate);
 
 export default function configureStore(initialState: Object) {
   const store = createStore(rootReducer, initialState, enhancer);
-  persistStore(store);
   return store;
 }

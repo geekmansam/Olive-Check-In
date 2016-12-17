@@ -2,6 +2,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { Pager } from 'react-bootstrap';
+import { push } from 'react-router-redux';
 import styles from './../styles/App.css';
 
 export default class App extends Component {

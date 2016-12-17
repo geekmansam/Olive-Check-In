@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, FormGroup,
 FormControl, ControlLabel, ButtonToolbar, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 class Settings extends Component {
 
@@ -86,7 +87,11 @@ class Settings extends Component {
                 <h1>Starting Mode</h1>
                 <ButtonToolbar>
                   <Button bsStyle="warning">Staff Mode</Button>
-                  <Button bsStyle="primary">Unattended</Button>
+                  <Button bsStyle="primary">
+                    <Link to="/" title="Unattended">
+                      Unattended
+                    </Link>
+                  </Button>
                 </ButtonToolbar>
               </Col>
             </Row>

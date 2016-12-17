@@ -44,7 +44,5 @@ export default function configureStore(initialState: Object) {
     );
   }
 
-  persistStore(store, { storage: asyncLocalStorage });
-
   return store;
 }
