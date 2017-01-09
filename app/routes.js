@@ -5,6 +5,7 @@ import App from './containers/App';
 import HomePage from './containers/HomePage';
 import CounterPage from './containers/CounterPage';
 import SettingsPage from './containers/SettingsPage';
+import StepFamilyPage from './containers/StepFamilyPage';
 
 
 export default (
@@ -12,5 +13,6 @@ export default (
     <IndexRoute component={HomePage} />
     <Route path="/counter" component={CounterPage} />
     <Route path="/settings" component={SettingsPage} />
+    <Route path="/step/family" component={StepFamilyPage} />
   </Route>
 );

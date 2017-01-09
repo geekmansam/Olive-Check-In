@@ -1,7 +1,7 @@
 // @flow
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
-import { Pager } from 'react-bootstrap';
+import { ButtonToolbar, Button } from 'react-bootstrap';
 import styles from './../styles/App.css';
 
 export default class App extends Component {
@@ -19,10 +19,18 @@ export default class App extends Component {
         <div className={`main-window ${styles.vertical_center}`}>
           {this.props.children}
         </div>
-        <Pager>
-          <Pager.Item previous href="#">&larr; Back</Pager.Item>
-          <Pager.Item next href="#">Next &rarr;</Pager.Item>
-        </Pager>
+        <ButtonToolbar>
+          <Button bsStyle="warning" bsSize="large">
+            <Link to="/family" title="Family">
+              Back
+            </Link>
+          </Button>
+          <Button bsStyle="success" bsSize="large">
+            <Link to="/step/family" title="Family">
+              Next
+            </Link>
+          </Button>
+        </ButtonToolbar>
       </div>
     );
   }
