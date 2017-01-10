@@ -1,6 +1,8 @@
 # Olive Baptist Church Check-In App 
 
-This app is built with Electron based on [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate)
+This app is built with Electron based on [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate).
+
+Specifications at https://marvelapp.com/169a84g/screen/17201456
 
 ## Install
 

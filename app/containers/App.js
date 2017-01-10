@@ -1,10 +1,11 @@
 // @flow
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import { ButtonToolbar, Button } from 'react-bootstrap';
 import styles from './../styles/App.css';
 
-export default class App extends Component {
+class App extends Component {
   static propTypes = {
     children: PropTypes.element.isRequired
   };
@@ -21,12 +22,12 @@ export default class App extends Component {
         </div>
         <ButtonToolbar>
           <Button bsStyle="warning" bsSize="large">
-            <Link to="/family" title="Family">
+            <Link to={this.props.navigation.back} title="Back">
               Back
             </Link>
           </Button>
           <Button bsStyle="success" bsSize="large">
-            <Link to="/step/family" title="Family">
+            <Link to={this.props.navigation.next} title="Next">
               Next
             </Link>
           </Button>
@@ -35,3 +36,18 @@ export default class App extends Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    navigation: state.navigation
+  };
+}
+
+App.propTypes = {
+  navigation: React.PropTypes.shape({
+    next: React.PropTypes.string,
+    back: React.PropTypes.string
+  })
+};
+
+export default connect(mapStateToProps)(App);
