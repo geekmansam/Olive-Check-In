@@ -6,6 +6,7 @@ import HomePage from './containers/HomePage';
 import CounterPage from './containers/CounterPage';
 import SettingsPage from './containers/SettingsPage';
 import StepFamilyPage from './containers/StepFamilyPage';
+import StepCellPage from './containers/StepCellPage';
 
 
 export default (
@@ -14,5 +15,6 @@ export default (
     <Route path="/counter" component={CounterPage} />
     <Route path="/settings" component={SettingsPage} />
     <Route path="/step/family" component={StepFamilyPage} />
+    <Route path="/step/cell" component={StepCellPage} />
   </Route>
 );
