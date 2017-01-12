@@ -7,7 +7,7 @@ import CounterPage from './containers/CounterPage';
 import SettingsPage from './containers/SettingsPage';
 import StepFamilyPage from './containers/StepFamilyPage';
 import StepCellPage from './containers/StepCellPage';
-
+import StepTagsPage from './containers/StepTagsPage';
 
 export default (
   <Route path="/" component={App}>
@@ -16,5 +16,6 @@ export default (
     <Route path="/settings" component={SettingsPage} />
     <Route path="/step/family" component={StepFamilyPage} />
     <Route path="/step/cell" component={StepCellPage} />
+    <Route path="/step/tags" component={StepTagsPage} />
   </Route>
 );
