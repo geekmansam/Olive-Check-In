@@ -5,7 +5,7 @@ FormControl, HelpBlock, ControlLabel } from 'react-bootstrap';
 import DialPad from './DialPad';
 
 
-export default class StepFamily extends Component {
+export default class StepCell extends Component {
   render() {
     return (
       <div>

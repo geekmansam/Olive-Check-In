@@ -2,20 +2,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import StepCell from '../components/StepCell';
+import StepTags from '../components/StepTags';
 import { Creators } from './../actions/navigation';
 
-class StepCellPage extends Component {
+class StepTagsPage extends Component {
   componentDidMount() {
     this.props.updateNavigation({
-      back: '/step/family',
-      next: '/step/tags'
+      back: '/step/cell',
+      next: '/print'
     });
   }
 
   render() {
     return (
-      <StepCell />
+      <StepTags />
     );
   }
 }
@@ -30,9 +30,9 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators(Creators, dispatch);
 }
 
-StepCellPage.propTypes = {
+StepTagsPage.propTypes = {
   updateNavigation: React.PropTypes.func
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(StepCellPage);
+export default connect(mapStateToProps, mapDispatchToProps)(StepTagsPage);
 
