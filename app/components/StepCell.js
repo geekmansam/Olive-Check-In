@@ -17,7 +17,7 @@ export default class StepCell extends Component {
                   controlId="formBasicText"
                   validationState={() => {}}
                 >
-                  <ControlLabel>Type your cellphone number</ControlLabel>
+                  <ControlLabel><p>Type your cellphone number</p></ControlLabel>
                   <FormControl
                     type="text"
                     value=""
@@ -25,10 +25,11 @@ export default class StepCell extends Component {
                     onChange={() => {}}
                   />
                   <FormControl.Feedback />
-                  <HelpBlock>Then press next</HelpBlock>
+                  <HelpBlock><p>Then press next</p></HelpBlock>
                   <HelpBlock className="more-info">
-                    <p>We use this number to text or call you in case your child needs your attention. <br />
-                    Please type a cellphone that you will have with you today</p>
+                    We use this number to text or call you in case
+                     your child needs your attention. <br />
+                    Please type a cellphone that you will have with you today
                   </HelpBlock>
                 </FormGroup>
               </form>

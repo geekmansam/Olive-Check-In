@@ -1,7 +1,7 @@
 // @flow
 import React, { Component } from 'react';
 import { Grid, Row, Col, FormGroup,
-HelpBlock, ControlLabel, Button } from 'react-bootstrap';
+HelpBlock, ControlLabel, Button, ButtonToolbar } from 'react-bootstrap';
 import DialPad from './DialPad';
 
 
@@ -17,11 +17,13 @@ export default class StepTags extends Component {
                   controlId="formBasicText"
                   validationState={() => {}}
                 >
-                  <ControlLabel>How many Pick-Up Tags Do You Need</ControlLabel>
-                  <HelpBlock>Every Adult Must Have A Pick-Up Tag To Enter Secured Hallways</HelpBlock>
+                  <ControlLabel><p>How many Pick-Up Tags Do You Need</p></ControlLabel>
+                  <HelpBlock><p>Every Adult Must Have A Pick-Up Tag To Enter Secured Hallways</p></HelpBlock>
                   <div>
-                    <Button bsStyle="default" bsSize="large">One Pick-Up Tag</Button>
-                    <Button bsStyle="default" bsSize="large">Two Pick-Up Tag</Button>
+                    <ButtonToolbar>
+                      <Button bsStyle="default" bsSize="large">One Pick-Up Tag</Button>
+                      <Button bsStyle="default" bsSize="large">Two Pick-Up Tag</Button>
+                    </ButtonToolbar>
                   </div>
                   <HelpBlock>
                     Each child will be printed two tags,

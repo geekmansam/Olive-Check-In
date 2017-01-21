@@ -20,7 +20,11 @@ export default class AppProvider extends React.Component {
   state = {};
 
   componentWillMount() {
-    persistStore(store, { storage: asyncLocalStorage }, () => {
+    const persistOptions = {
+      storage: asyncLocalStorage,
+      whitelist: ['settings', 'navigation'],
+    };
+    persistStore(store, persistOptions, () => {
       this.setState({ rehydrated: true });
     });
   }

@@ -17,5 +17,6 @@ export default (
     <Route path="/step/family" component={StepFamilyPage} />
     <Route path="/step/cell" component={StepCellPage} />
     <Route path="/step/tags" component={StepTagsPage} />
+    <Route path="*" component={HomePage} />
   </Route>
 );

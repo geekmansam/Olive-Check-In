@@ -21,7 +21,7 @@ class App extends Component {
           {this.props.children}
         </div>
         <ButtonToolbar>
-          <Button bsStyle="warning" bsSize="large">
+          <Button bsStyle="warning" bsSize="large" disabled={this.props.navigation.back == null}>
             <Link to={this.props.navigation.back} title="Back">
               Back
             </Link>

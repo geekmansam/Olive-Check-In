@@ -16,13 +16,13 @@ export default class StepFamily extends Component {
                   controlId="formBasicText"
                   validationState={() => {}}
                 >
-                  <ControlLabel>Select your family</ControlLabel>
+                  <ControlLabel><p>Select your family</p></ControlLabel>
                   <FormControl componentClass="select" placeholder="Family...">
                     <option value="select">select</option>
                     <option value="other">...</option>
                   </FormControl>
                   <FormControl.Feedback />
-                  <HelpBlock>Then press next</HelpBlock>
+                  <HelpBlock><p>Then press next</p></HelpBlock>
                 </FormGroup>
               </form>
             </Col>

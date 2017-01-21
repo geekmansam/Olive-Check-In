@@ -1,10 +1,18 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { push } from 'react-router-redux';
+import { bindActionCreators } from 'redux';
+import { Creators } from './../actions/navigation';
 import Home from '../components/Home';
 
 class HomePage extends Component {
+  componentDidMount() {
+    this.props.updateNavigation({
+      back: null,
+      next: '/step/family'
+    });
+  }
+
   render() {
     return (
       <Home />
@@ -12,15 +20,20 @@ class HomePage extends Component {
   }
 }
 
-// function mapStateToProps(state) {
-//   if (!state.settings.baseApiUrl) {
-//     push('/settings');
-//     console.log('Redirecting to settings...');
-//   }
-//   return {
-//     settings: state.settings
-//   };
-// }
+HomePage.propTypes = {
+  updateNavigation: React.PropTypes.func
+};
 
-export default connect()(HomePage);
+function mapStateToProps(state) {
+  return {
+    settings: state.settings
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(Creators, dispatch);
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
 

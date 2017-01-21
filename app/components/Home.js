@@ -17,7 +17,7 @@ export default class Home extends Component {
                   controlId="formBasicText"
                   validationState={() => {}}
                 >
-                  <ControlLabel>Type your phone number</ControlLabel>
+                  <ControlLabel><p>Type your phone number</p></ControlLabel>
                   <FormControl
                     type="text"
                     value=""
@@ -25,7 +25,7 @@ export default class Home extends Component {
                     onChange={() => {}}
                   />
                   <FormControl.Feedback />
-                  <HelpBlock>Then press next</HelpBlock>
+                  <HelpBlock><p>Then press next</p></HelpBlock>
                 </FormGroup>
               </form>
             </Col>
