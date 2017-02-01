@@ -86,7 +86,9 @@ class Settings extends Component {
                 </form>
                 <h1>Starting Mode</h1>
                 <ButtonToolbar>
-                  <Button bsStyle="warning">Staff Mode</Button>
+                  <Button bsStyle="warning">
+                    <Link to="/admin/family/search">Staff Mode</Link>
+                  </Button>
                   <Button bsStyle="primary">
                     <Link to="/" title="Unattended">
                       Unattended
