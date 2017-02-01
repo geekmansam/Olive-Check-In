@@ -9,6 +9,7 @@ import StepFamilyPage from './containers/StepFamilyPage';
 import StepCellPage from './containers/StepCellPage';
 import StepTagsPage from './containers/StepTagsPage';
 import AdminFamilySearchPage from './containers/admin/family/AdminFamilySearchPage';
+import AdminFamilySelectPage from './containers/admin/family/AdminFamilySelectPage';
 import AdminFamilyCreatePage from './containers/admin/family/AdminFamilyCreatePage';
 import AdminFamilyEditPage from './containers/admin/family/AdminFamilyEditPage';
 
@@ -21,6 +22,7 @@ export default (
     <Route path="/step/cell" component={StepCellPage} />
     <Route path="/step/tags" component={StepTagsPage} />
     <Route path="/admin/family/search" component={AdminFamilySearchPage} />
+    <Route path="/admin/family/select" component={AdminFamilySelectPage} />
     <Route path="/admin/family/create" component={AdminFamilyCreatePage} />
     <Route path="/admin/family/edit" component={AdminFamilyEditPage} />
     <Route path="*" component={HomePage} />

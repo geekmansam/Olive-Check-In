@@ -26,7 +26,7 @@ class App extends Component {
               Back
             </Link>
           </Button>
-          <Button bsStyle="success" bsSize="large" style={{ float: 'right' }} >
+          <Button bsStyle="success" bsSize="large" style={{ float: 'right' }} disabled={this.props.navigation.next == null}>
             <Link to={this.props.navigation.next} title="Next">
               Next
             </Link>
