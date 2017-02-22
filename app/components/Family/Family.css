@@ -1,0 +1,20 @@
+.familyContainer {
+  background: #fff;
+  color: #020202;
+  font-size: large;
+  margin: 10px;
+  padding: 20px;
+  height: 175px;
+}
+
+.familyPhone {
+}
+
+.familyMembers {
+  font-size: smaller;
+  color: #777;
+}
+
+.familyActions {
+  float: right;
+}
