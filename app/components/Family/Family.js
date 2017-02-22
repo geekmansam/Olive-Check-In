@@ -6,7 +6,9 @@ import styles from './Family.css';
 const Family = (props) => (
   <div className={styles.familyContainer}>
     <h3>
-      { props.lastname } Family
+      <Link to={`/admin/family/view/${props.id}`} title="View Family">
+        { props.lastname } Family
+      </Link>
     </h3>
     <div className={styles.familyPhone}>
       Phone: {props.phone}
@@ -23,7 +25,6 @@ const Family = (props) => (
         </Button>
       </div>
     }
-
   </div>
 );
 
@@ -32,7 +33,7 @@ Family.propTypes = {
   lastname: React.PropTypes.string,
   phone: React.PropTypes.string,
   members: React.PropTypes.arrayOf(React.PropTypes.string),
-  editable: React.PropTypes.bool
+  editable: React.PropTypes.bool,
 };
 
 export default Family;
