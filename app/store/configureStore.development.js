@@ -4,7 +4,6 @@ import { browserHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
 import createLogger from 'redux-logger';
 import { autoRehydrate } from 'redux-persist';
-import { authMiddleware } from 'redux-implicit-oauth2';
 import rootReducer from '../reducers';
 
 import * as counterActions from '../actions/counter';
@@ -31,7 +30,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
   compose;
 /* eslint-enable no-underscore-dangle */
 const enhancer = composeEnhancers(
-  applyMiddleware(thunk, router, logger, authMiddleware),
+  applyMiddleware(thunk, router, logger),
   autoRehydrate()
 );
 
