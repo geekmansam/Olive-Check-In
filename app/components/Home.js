@@ -1,4 +1,3 @@
-// @flow
 import React, { Component } from 'react';
 import { Grid, Row, Col, FormGroup,
 FormControl, HelpBlock, ControlLabel } from 'react-bootstrap';
@@ -6,6 +5,13 @@ import DialPad from './DialPad';
 
 
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      number: ''
+    };
+  }
+
   render() {
     return (
       <div>
@@ -20,7 +26,7 @@ export default class Home extends Component {
                   <ControlLabel><p>Type your phone number</p></ControlLabel>
                   <FormControl
                     type="text"
-                    value=""
+                    value={this.state.number}
                     placeholder=""
                     onChange={() => {}}
                   />
@@ -30,7 +36,10 @@ export default class Home extends Component {
               </form>
             </Col>
             <Col xs={12} md={4}>
-              <DialPad onClick={() => {}} />
+              <DialPad
+                onClick={(e) => { this.setState({ number: this.state.number + e.toString() }); }}
+                onBackClick={() => { this.setState({ number: this.state.number.slice(0, -1) }); }}
+              />
             </Col>
           </Row>
         </Grid>
