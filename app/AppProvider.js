@@ -2,7 +2,7 @@
 import { persistStore } from 'redux-persist';
 import React from 'react';
 import { Provider } from 'react-redux';
-import { Router, browserHistory } from 'react-router';
+import { Router, hashHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { asyncLocalStorage } from 'redux-persist/storages';
 import routes from './routes';
@@ -10,7 +10,7 @@ import configureStore from './store/configureStore';
 import './app.global.css';
 
 const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
+const history = syncHistoryWithStore(hashHistory, store);
 
 export default class AppProvider extends React.Component {
   constructor() {

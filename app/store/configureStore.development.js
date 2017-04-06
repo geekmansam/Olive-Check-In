@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 import { routerMiddleware, push } from 'react-router-redux';
 import createLogger from 'redux-logger';
 import { autoRehydrate } from 'redux-persist';
@@ -18,7 +18,7 @@ const logger = createLogger({
   collapsed: true
 });
 
-const router = routerMiddleware(browserHistory);
+const router = routerMiddleware(hashHistory);
 
 // If Redux DevTools Extension is installed use it, otherwise use Redux compose
 /* eslint-disable no-underscore-dangle */
