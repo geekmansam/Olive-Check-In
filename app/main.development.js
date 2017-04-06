@@ -47,9 +47,7 @@ app.on('ready', async () => {
     height: 728
   });
 
-  if (process.env.NODE_ENV === 'production') {
-    mainWindow.setFullScreen(true);
-  }
+  mainWindow.setFullScreen(true);
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
 
